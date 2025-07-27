@@ -1,0 +1,336 @@
+body {
+    font-family: 'Chewy', cursive; /* Menggunakan font yang ceria */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #87CEEB, #A0E7FD); /* Warna biru langit */
+    color: #333;
+    overflow-x: hidden; /* Mengatasi scroll horizontal */
+}
+
+/* --- Halaman Awal (index.html) --- */
+.hero-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 60px;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeInScale 1.5s ease-out; /* Animasi masuk */
+    max-width: 90%;
+    box-sizing: border-box;
+}
+
+.hero-title {
+    font-size: 4em;
+    color: #FF6347; /* Merah cerah */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0 #FFD700; /* Shadow kuning */
+}
+
+.hero-subtitle {
+    font-size: 1.8em;
+    color: #4682B4; /* Biru sedang */
+    margin-bottom: 40px;
+}
+
+.start-button {
+    background-color: #32CD32; /* Hijau cerah */
+    color: white;
+    padding: 20px 40px;
+    font-size: 2em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.start-button:hover {
+    background-color: #228B22; /* Hijau lebih gelap */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Animasi Halaman Awal --- */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* --- Halaman Game (game.html) --- */
+.game-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 90%;
+    max-width: 900px; /* Lebar maksimum untuk layout yang lebih baik */
+    box-sizing: border-box;
+}
+
+.header-game {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Jarak antar elemen */
+    margin-bottom: 30px;
+}
+
+.score-board, .timer-board {
+    font-size: 1.8em;
+    color: #FF6347;
+    background-color: #FFFACD;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.challenge-area {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#current-letter {
+    font-size: 8em; /* Ukuran huruf sangat besar */
+    color: #4682B4;
+    text-shadow: 5px 5px 0 #ADD8E6;
+    margin-bottom: 30px;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+#answer-input {
+    padding: 15px 20px;
+    font-size: 1.5em;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 300px;
+    text-align: center;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+#check-button {
+    background-color: #FFD700; /* Kuning cerah */
+    color: #333;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#check-button:hover {
+    background-color: #FFC107; /* Kuning lebih gelap */
+}
+
+#feedback-message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    min-height: 30px; /* Agar tidak terjadi "lonjakan" layout */
+}
+
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Untuk responsif */
+    gap: 20px; /* Jarak antar kartu fitur */
+}
+
+.feature-card {
+    background-color: #E0FFFF; /* Biru muda */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 40px); /* Menyesuaikan lebar dengan gap */
+    min-width: 280px; /* Lebar minimum untuk kartu */
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-card h3 {
+    color: #6A5ACD; /* Ungu sedang */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Memusatkan teks judul */
+    text-align: center;
+}
+
+.feature-card .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    flex-shrink: 0; /* Mencegah ikon menyusut */
+}
+
+.feature-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    text-align: center;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Agar paragraf mengisi ruang yang tersedia */
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#leaderboard-list li {
+    background-color: #F8F8FF;
+    padding: 8px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#star-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    min-height: 40px; /* Agar area bintang tidak bergeser */
+}
+
+.star {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc; /* Warna abu-abu untuk bintang belum terkumpul */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.star.collected {
+    background-color: #FFD700; /* Kuning emas untuk bintang terkumpul */
+}
+
+#play-sound-button {
+    background-color: #FF6347; /* Merah cerah */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+#play-sound-button:hover {
+    background-color: #CD5C5C; /* Merah lebih gelap */
+}
+
+/* --- Responsif --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5em;
+    }
+
+    .start-button {
+        font-size: 1.5em;
+        padding: 15px 30px;
+    }
+
+    .header-game {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .score-board, .timer-board {
+        font-size: 1.5em;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    #current-letter {
+        font-size: 6em;
+    }
+
+    #answer-input, #check-button {
+        font-size: 1.2em;
+        padding: 12px 18px;
+    }
+    
+    #answer-input {
+        width: calc(100% - 100px); /* Menyesuaikan lebar input */
+    }
+
+    .features-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 90%; /* Hampir penuh lebar */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5em;
+    }
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+    .start-button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+    #current-letter {
+        font-size: 4em;
+    }
+    #answer-input {
+        width: 85%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    #check-button {
+        width: 85%;
+    }
+    .score-board, .timer-board {
+        font-size: 1.3em;
+    }
+    .feature-card h3 {
+        font-size: 1.5em;
+    }
+    .feature-card p {
+        font-size: 1em;
+    }
+}

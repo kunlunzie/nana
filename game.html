@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abjad Ceria: Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header-game">
+            <div class="score-board">Skor: <span id="score">0</span></div>
+            <div class="timer-board">Waktu: <span id="timer">60</span>s</div>
+        </div>
+
+        <div class="challenge-area">
+            <h2 id="current-letter">A</h2>
+            <input type="text" id="answer-input" placeholder="Ketik huruf di sini..." autofocus maxlength="1">
+            <button id="check-button">Cek!</button>
+            <div id="feedback-message"></div>
+        </div>
+
+        <div class="features-section">
+            <div class="feature-card">
+                <h3><img src="https://img.icons8.com/plasticine/100/000000/medal-first-place.png" alt="Leaderboard" class="icon"> Papan Peringkat</h3>
+                <p>Bersaing dengan teman-temanmu dan lihat siapa yang paling hebat!</p>
+                <ul id="leaderboard-list">
+                    <li>Belum ada skor tinggi. Mainkan gamenya!</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3><img src="https://img.icons8.com/plasticine/100/000000/stars.png" alt="Reward" class="icon"> Koleksi Bintang</h3>
+                <p>Kumpulkan bintang untuk membuka hadiah menarik!</p>
+                <div id="star-collection">
+                    </div>
+            </div>
+            <div class="feature-card">
+                <h3><img src="https://img.icons8.com/plasticine/100/000000/music.png" alt="Sound" class="icon"> Suara Huruf</h3>
+                <p>Dengar cara melafalkan setiap huruf dengan benar!</p>
+                <button id="play-sound-button">Dengarkan Suara</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
